@@ -1,0 +1,29 @@
+{
+    "name": "Website rating",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": ["activeTab", "storage", "contextMenus"],
+    "icons": { "16": "./icons/star_38.png",
+        "38": "./icons/star_38.png",
+       "128": "./icons/star_38.png" },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    "content_scripts": [{
+        "run_at": "document_end",
+        "css": ["styles.css"],
+        "js": ["rating.js"],
+        "matches": ["<all_urls>"]      
+      }],
+      "browser_action": {
+        "default_popup": "options.html",
+        "default_icon" : "./icons/star_38.png",
+        "open_in_tab": false
+      },
+      "background": {
+        "scripts": ["contextMenu.js"],
+        "persistent": false
+      }
+       
+}

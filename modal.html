@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <center><h1>GeeksforGeeks</h1></center>
+    <button id="Button" value="Submit" class="mybutton">
+        <img class="d-block w-100" src="./icons/trashcan.png" 
+      style="cursor:pointer; width: 20px; height: 20px" alt="opmodel">
+      </button>
+    <ul id="myList"></ul>
+    <script>
+
+      let data = ["Ram", "Shyam", "Sita", "Gita"];
+      let list = document.getElementById("myList");
+      data.forEach((item) => {
+        let li = document.createElement("li");
+        li.innerText = item;
+        list.appendChild(li);
+      });
+
+      function ready(){
+        var Button = document.getElementById("Button");
+        Button.onclick = function likePage(){   
+            chrome.tabs.query(
+                {active:true, currentWindow: true},
+                tabs=>{ const tab=tabs[0];
+                    var url = new URL(tab.url)
+                    var domain = url.hostname
+
+                    chrome.storage.sync.get("Likes", function(result) {
+                        var allValues = Object.values(result);
+                        var test = []
+
+                        storageURL = allValues[0]
+                        if(storageURL != null){
+                            storageURL.forEach(item => {test.push(item) });
+                        }
+                        test.push(domain)
+
+                        
+                    });
+                    })
+        }
+      }
+      
+
+        document.addEventListener('readystatechange', () => {    
+            if (document.readyState == 'complete') ready();
+        });
+
+    </script>
+  </body>
+</html>

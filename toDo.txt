@@ -1,0 +1,15 @@
+1. Make a list of all the ratings nicely categorized
+
+2. Open a modal/alert window in the middle of the screen so it's easy to read from them.
+
+3. Make a rated website immune to be rated again in the same way. If you want to change the rating from good to bad the make a popup "are you sure?"
+
+4. change the icon in upper right corner so it's green if on a good rated website or red if on a bad rated website
+
+DONE: 5. Create a context menu so you can rate websites by right-clicking 
+
+
+MAKE IT MORE CUSTOMIZABLE!!!!!!!
+SET SPECIFIC COLORS TO CERTAIN WEBSITES OF A USERS CHOICE
+
+BUGS!!!!!:Blocks of searchs's that come up if clicking more results does not show colors
